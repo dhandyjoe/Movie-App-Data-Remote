@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_movie_poster"
         android:layout_width="80dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,12 +17,12 @@
         app:srcCompat="@color/black" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_original_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_movie_poster"
+        app:layout_constraintStart_toStartOf="@+id/iv_movie_poster"
+        app:layout_constraintTop_toBottomOf="@+id/iv_movie_poster" />
 </androidx.constraintlayout.widget.ConstraintLayout>

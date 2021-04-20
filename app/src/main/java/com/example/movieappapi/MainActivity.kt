@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.lifecycle.Observer
+import com.example.movieappapi.data.remote.MovieRepository
 import com.example.movieappapi.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
-        viewModel.movies.observe(this, Observer {})
+        val adapter = MovieAdapter()
+        binding.rvNowPlaying.setHasFixedSize(true)
+        binding.rvNowPlaying.adapter = adapter
+
+        viewModel.movies.observe(this, Observer {
+            adapter.submitData(this.lifecycle, it)
+        })
     }
 }
